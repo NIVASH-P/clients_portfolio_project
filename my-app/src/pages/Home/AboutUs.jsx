@@ -2,6 +2,7 @@ import React from "react";
 import { MapPin } from "lucide-react";
 import ImageCard from "@/globalComponent/ImageCard";
 import TextCard from "@/globalComponent/TextCard";
+import StatCard from "@/globalComponent/StatCard";
 import container1 from "@/assets/first-Card-image.png";
 import container3 from "@/assets/container3-image.png";
 import container5 from "@/assets/container5.png";
@@ -91,7 +92,7 @@ const AboutUs = () => {
             {/* Second Row - Two Stats Cards */}
             <div className="grid grid-cols-2 gap-4">
               {/* 10+ Card */}
-              <TextCard
+              <StatCard
                 heading="10+"
                 description="Years of innovation and valuable insights, empowering businesses to thrive in a competitive market."
                 bgColor="bg-[#232323]"
@@ -113,7 +114,7 @@ const AboutUs = () => {
               headingSize="text-6xl"
               descriptionSize="text-sm"
               icon={<img src={iconImage} alt="icon" className="w-6 h-6" />}
-              iconPosition="top-left"
+              iconCircle={true}
             />
 
             {/* Fourth Row - Two Images */}
@@ -132,10 +133,16 @@ const AboutUs = () => {
               <h2
                 className="mb-6"
                 style={{
+                  background: "#111111",
                   fontFamily: "Inter",
-                  fontSize: "42px",
-                  fontWeight: 600,
-                  lineHeight: "1.2",
+                  fontSize: "33.79px",
+                  fontWeight: 400,
+                  lineHeight: "37.52px",
+                  letterSpacing: "-2.03px",
+                  verticalAlign: "middle",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
                 }}
               >
                 Unlocking creativity, strategy, and innovation for every
@@ -144,12 +151,14 @@ const AboutUs = () => {
             </div>
             <div className="flex items-center">
               <p
-                className="text-gray-600"
                 style={{
                   fontFamily: "Inter",
-                  fontSize: "15px",
-                  fontWeight: 400,
-                  lineHeight: "1.6",
+                  fontSize: "15.03px",
+                  fontWeight: 300,
+                  lineHeight: "22.52px",
+                  letterSpacing: "0%",
+                  verticalAlign: "middle",
+                  color: "#111111CC",
                 }}
               >
                 At Arunijone, I bring together skills from UX/UI design, digital
@@ -161,56 +170,55 @@ const AboutUs = () => {
           </div>
 
           {/* Images Grid - Desktop */}
-          <div className="grid grid-cols-3 gap-4">
-            {/* First Row */}
+          <div className="grid grid-cols-4 gap-4">
+            {/* First Row - Left: Large Image (spans 2 rows) */}
             <ImageCard
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200"
+              src={container1}
               alt="Team collaboration"
-              height="h-80"
-              className="col-span-2 row-span-1"
+              className="col-span-2 "
             />
 
-            {/* 3+ Card */}
-            <TextCard
+            {/* First Row - Right: 3+ Card */}
+            <StatCard
               heading="3+"
               description="Years of continuous innovation and valuable insights, helping businesses improve their digital presence, design better products, and make informed decisions through research-led strategies."
-              bgColor="bg-black"
+              bgColor="bg-[#232323]"
               textColor="text-white"
               headingSize="text-6xl"
               descriptionSize="text-sm"
+              className="h-full"
             />
 
-            {/* Second Row */}
-            {/* 95% Card */}
+            {/* First Row - Right: Professional Image */}
+            <ImageCard
+              src={container3}
+              alt="Professional"
+              className="h-full aspect-square"
+            />
+
+            {/* Second Row - 95% Card (spans 2 columns) */}
             <TextCard
               heading="95%"
               description="Client satisfaction achieved through personalized solutions, proactive support, and a commitment to understanding each client's unique requirements. My focus on excellence ensures your success at every step."
               bgColor="bg-button-bg"
               textColor="text-white"
-              headingSize="text-7xl"
+              headingSize="text-6xl"
               descriptionSize="text-base"
-              icon={<img src={iconImage} alt="icon" className="w-7 h-7" />}
-              iconPosition="top-left"
+              icon={<img src={iconImage} alt="icon" className="w-6 h-6" />}
+              iconCircle={true}
               className="col-span-2"
             />
 
-            {/* Image */}
+            {/* Third Row - Two Bottom Images */}
             <ImageCard
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600"
-              alt="Professional"
-              height="h-80"
-            />
-
-            {/* Third Row - Two Images */}
-            <ImageCard
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600"
+              src={container5}
               alt="Team member"
-              height="h-64"
+              className="aspect-square h-full"
             />
             <ImageCard
-              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600"
+              src={container6}
               alt="Team member"
-              height="h-64"
+              className="aspect-square h-full"
             />
           </div>
         </div>

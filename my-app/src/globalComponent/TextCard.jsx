@@ -10,58 +10,63 @@ const TextCard = ({
   padding = "p-4",
   className = "",
   icon,
-  iconPosition = "top-left",
   minHeight = "",
+  iconCircle = false,
 }) => {
-  const iconPositionClasses = {
-    "top-left": "top-4 left-4 md:top-6 md:left-6",
-    "top-right": "top-4 right-4 md:top-6 md:right-6",
-    "bottom-left": "bottom-4 left-4 md:bottom-6 md:left-6",
-    "bottom-right": "bottom-4 right-4 md:bottom-6 md:right-6",
-  };
-
   return (
     <div
-      className={`${bgColor} ${textColor} ${rounded} ${padding} ${minHeight} flex flex-col relative overflow-hidden ${className}`}
+      className={`${bgColor} ${textColor} ${rounded} ${padding} ${minHeight} flex flex-col justify-between relative overflow-hidden ${className}`}
     >
-      {/* Icon */}
-      {icon && (
-        <div className={`absolute ${iconPositionClasses[iconPosition]}`}>
-          {icon}
-        </div>
-      )}
-
       {/* Content */}
-      <div className={icon ? "mt-8" : ""}>
-        {/* Heading */}
-        {heading && (
-          <h3
-            className={`${headingSize} mb-2`}
-            style={{
-              fontFamily: "Inter",
-              fontWeight: 600,
-              lineHeight: "1",
-            }}
-          >
-            {heading}
-          </h3>
-        )}
+      <div className="flex flex-col justify-between h-full">
+        {/* Top Section: Icon */}
+        <div>
+          {/* Icon with optional circle background */}
+          {icon && (
+            <div className="mb-4">
+              {iconCircle ? (
+                <div className="w-12 h-12 rounded-full bg-[#4d90fe] border- border-opacity-20 flex items-center justify-center">
+                  {icon}
+                </div>
+              ) : (
+                icon
+              )}
+            </div>
+          )}
+        </div>
 
-        {/* Description */}
-        {description && (
-          <p
-            style={{
-              fontFamily: "Inter",
-              fontWeight: 500,
-              fontSize: "13.3px",
-              lineHeight: "18.95px",
-              letterSpacing: "-0.11px",
-              verticalAlign: "middle",
-            }}
-          >
-            {description}
-          </p>
-        )}
+        {/* Bottom Section: Heading and Description */}
+        <div>
+          {/* Heading */}
+          {heading && (
+            <h3
+              className={`${headingSize} mb-2`}
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 600,
+                lineHeight: "1",
+              }}
+            >
+              {heading}
+            </h3>
+          )}
+
+          {/* Description */}
+          {description && (
+            <p
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 500,
+                fontSize: "13.16px",
+                lineHeight: "18.65px",
+                letterSpacing: "-0.1px",
+                verticalAlign: "middle",
+              }}
+            >
+              {description}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
